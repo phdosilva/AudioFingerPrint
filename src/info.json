@@ -7,75 +7,75 @@
         "authors": "names here",
         "music": "title of music here"
     },
-    '30': {
-        'authors': 'MC CH DA Z.O, O BRUTTO, MC WILLIAN, MC MAGRINHO, MC RICK ',
-        'music': ' PUTARIA LOUCA_160k'
+    "30": {
+        "authors": "MC CH DA Z.O, O BRUTTO, MC WILLIAN, MC MAGRINHO, MC RICK ",
+        "music": " PUTARIA LOUCA_160k"
     },
-    '31': {
-        'authors': 'MC CJ ',
-        'music': ' Quando Ela Sentou (Official Music Video)_160k'
+    "31": {
+        "authors": "MC CJ ",
+        "music": " Quando Ela Sentou (Official Music Video)_160k"
     },
-    '32': {
-        'authors': 'MC Don Juan e MC Hariel ',
-        'music': ' Lei do Retorno (GR6 Filmes)_160k'
+    "32": {
+        "authors": "MC Don Juan e MC Hariel ",
+        "music": " Lei do Retorno (GR6 Filmes)_160k"
     },
-    '33': {
-        'authors': 'Mc Draak ',
-        'music': ' Não Nasci Pra Namorar (Official Music Video)_160k'
+    "33": {
+        "authors": "Mc Draak ",
+        "music": " Não Nasci Pra Namorar (Official Music Video)_160k"
     },
-    '34':
+    "34":
     {
-        'authors': 'MC Jacaré e JS Mão de Ouro ', 
-        'music': ' Melhorar Meu Dia _ Brega Funk (Lyric Oficial)(MP3_160K)'
+        "authors": "MC Jacaré e JS Mão de Ouro ", 
+        "music": " Melhorar Meu Dia _ Brega Funk (Lyric Oficial)(MP3_160K)"
     },
-    '35':
+    "35":
     {
-        'authors': 'MC JOSH ', 'music': ' BANDIDA (DJ WIN) 2020(MP3_160K)'
+        "authors": "MC JOSH ", "music": " BANDIDA (DJ WIN) 2020(MP3_160K)"
     },
-    '36':
+    "36":
     {
-        'authors': 'MC Kevin e MC Davi ', 
-        'music': ' Pra Inveja é Tchau (GR6 Filmes) Perera DJ_160k'
+        "authors": "MC Kevin e MC Davi ", 
+        "music": " Pra Inveja é Tchau (GR6 Filmes) Perera DJ_160k"
     },
-    '37':
+    "37":
     {
-        'authors': 'MC Lipi ',
-        'music': ' Motoloka (kondzilla.com) _ Official Music Video(MP3_160K)'
+        "authors": "MC Lipi ",
+        "music": " Motoloka (kondzilla.com) _ Official Music Video(MP3_160K)"
     },
-    '38':
+    "38":
     {
-        'authors': 'MC Luan da BS ', 
-        'music': ' Primeira Vista (Funk Explode)_160k'
+        "authors": "MC Luan da BS ", 
+        "music": " Primeira Vista (Funk Explode)_160k"
     },
-    '39':
+    "39":
     {
-        'authors': 'MC Niack ', 
-        'music': ' Oh Juliana (kondzilla.com)(MP3_160K)'
+        "authors": "MC Niack ", 
+        "music": " Oh Juliana (kondzilla.com)(MP3_160K)"
     },
-    '40':
+    "40":
     {
-        'authors': 'MC NICK ', 
-        'music': ' SEM MIMIMI BOTA AQUI '
+        "authors": "MC NICK ", 
+        "music": " SEM MIMIMI BOTA AQUI "
     },
-    '41':
+    "41":
     {
-        'authors': 'MC Paulin da Capital ', 
-        'music': ' Eu achei (Video clipe Oficial) DJ GM(MP3_160K)'
+        "authors": "MC Paulin da Capital ", 
+        "music": " Eu achei (Video clipe Oficial) DJ GM(MP3_160K)"
     },
-    '42':
+    "42":
     {
-        'authors': 'MC Paulin da Capital e MC Ryan SP ', 
-        'music': ' Os Mandrake Curte a Vida (GR6 Explode) DJ Pedro_160k'
+        "authors": "MC Paulin da Capital e MC Ryan SP ", 
+        "music": " Os Mandrake Curte a Vida (GR6 Explode) DJ Pedro_160k"
     },
-    '43':
+    "43":
     {
-        'authors': 'MC Pedrinho ', 
-        'music': ' Cansei de me apegar (GR6 Explode)_160k'
+        "authors": "MC Pedrinho ", 
+        "music": " Cansei de me apegar (GR6 Explode)_160k"
     },
-    '44':
+    "44":
     {
-        'authors': 'MC REINO E Z ALTERADO FEAT. MC CJ ', 
-        'music': ' APAIXONO EU '
+        "authors": "MC REINO E Z ALTERADO FEAT. MC CJ ", 
+        "music": " APAIXONO EU "
     }
 
 }
