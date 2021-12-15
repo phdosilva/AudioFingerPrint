@@ -1,11 +1,14 @@
 from pydub import AudioSegment
 
+from recognizer.settings import (DEFAULT_SAMPLING_OFFSET,
+                                 DEFAULT_SAMPLING_WIDTH)
+
 
 class AudioSegmentPlusPlus(AudioSegment):
     @property
     def samplings(self):
-        sampling_width: int = 371
-        offset: int = 16
+        sampling_width: int = DEFAULT_SAMPLING_WIDTH
+        offset: int = DEFAULT_SAMPLING_OFFSET
         audio_samplings = []
 
         i: int = 0
