@@ -15,10 +15,13 @@ class Database:
         self.cur = self.mydb.cursor()
 
     def setup(self):
-        self.cur.execute("CREATE DATABASE IF NOT EXISTS mydatabase")
-        self.cur.execute("USE mydatabase")
+        self.cur.execute("CREATE DATABASE IF NOT EXISTS SongsDatabase")
+        self.cur.execute("USE SongsDatabase")
 
         self.cur.execute(CREATE_SONGS_TABLE)
         self.cur.execute("SHOW TABLES")
         for x in self.cur:
             print(x)
+
+    def populate(self):
+        pass
