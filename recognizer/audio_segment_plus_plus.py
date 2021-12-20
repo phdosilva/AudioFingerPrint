@@ -4,12 +4,11 @@ from random import choice
 from recognizer.settings import (DEFAULT_SAMPLING_OFFSET,
                                  DEFAULT_SAMPLING_WIDTH)
 
-
 class AudioSegmentPlusPlus(AudioSegment):
     @property
     def samplings(self):
-        sampling_width: int = 4096
-        offset: int = 4096 * 0.5
+        sampling_width: int = DEFAULT_SAMPLING_OFFSET
+        offset: int = DEFAULT_SAMPLING_WIDTH
         audio_samplings = []
 
         i: int = 0

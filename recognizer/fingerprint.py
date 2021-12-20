@@ -74,8 +74,9 @@ def get_2D_peaks(arr2D, amp_min):
     # elements of the image.
     background = (arr2D == 0)
     eroded_background = binary_erosion(background, structure=neighborhood, border_value=1)
-
     detected_peaks = local_max != eroded_background
+    # detected_peaks = local_max
+    # in tests, without the eroded mask less matches are found
 
     amps = arr2D[detected_peaks]
     freqs, times = np.where(detected_peaks)
@@ -92,8 +93,8 @@ def get_2D_peaks(arr2D, amp_min):
 
 def generate_hashes(peaks, fan_value):
 
-    frequence = 0
-    time = 1
+    frequence_index = 0
+    time_index = 1
 
     hashes = []
     for current_peak_index in range(len(peaks)):
@@ -101,12 +102,12 @@ def generate_hashes(peaks, fan_value):
                                          (current_peak_index + fan_value)
                                          if (current_peak_index + fan_value < len(peaks))
                                          else len(peaks)):
-            freq_current_peak = peaks[current_peak_index][frequence]
-            freq_neighbor_peak = peaks[neighbor_peak_index][frequence]
 
-            # t1 is a absolute time
-            absolute_time = peaks[current_peak_index][time]
-            time_neighbor_peak = peaks[neighbor_peak_index][time]
+            freq_current_peak = peaks[current_peak_index][frequence_index]
+            freq_neighbor_peak = peaks[neighbor_peak_index][frequence_index]
+
+            absolute_time = peaks[current_peak_index][time_index]
+            time_neighbor_peak = peaks[neighbor_peak_index][time_index]
 
             # t_delta is a relative time (relative to the other peak)
             t_delta = time_neighbor_peak - absolute_time
