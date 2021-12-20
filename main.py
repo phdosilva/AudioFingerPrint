@@ -1,60 +1,55 @@
-from recognizer.audio_segment_plus_plus import AudioSegmentPlusPlus as AudioSegment
+import os
 import numpy as np
-from hashlib import sha1
-import matplotlib.mlab as mlab
-import matplotlib.pyplot as plt
+
+from recognizer.fingerprint import fingerprint
+from recognizer.audio_segment_plus_plus import AudioSegmentPlusPlus as AudioSegment
+
+audio_name_list = os.listdir('mp3/')
+
+def extract_channels(audio):
+    channels = []
+
+    # convert to manipulable data
+    audio_data = np.frombuffer(audio.raw_data, np.int16)
+
+    # get data by audio channels
+    # channels are often 2, on stereo audio
+    for channel_iterator in range(audio.channels):
+        channels.append((audio_data[channel_iterator::audio.channels]))
+
+    return channels
 
 
-audio_path = "mp3/2 - -- MC GASPAR E MC REIZINHO Feat. MC VITTIN PV - BOTADÃO - REMIX BREGA FUNK(MP3_160K).mp3"
+for i in range(1):
+    print(f'{i}')
 
-audio = AudioSegment.from_mp3(audio_path)
+    audio_path = f'mp3/{audio_name_list[i]}'
+    audio = AudioSegment.from_mp3(audio_path)
 
-channels = [] # each one will have audio
+    channels = extract_channels(audio)
 
-audio_data = np.frombuffer(audio.raw_data, np.int16)
+    channels_fingerprint_hashes = []
+    for channel in channels:
+        channels_fingerprint_hashes.append(fingerprint(channel))
 
-for channel_iterator in range(audio.channels): # number fo channels that audios have (usualy 2)
-    channels.append((audio_data[channel_iterator::audio.channels]))
+    # print(len(channels_fingerprint_hashes))
+    # print(channels_fingerprint_hashes[1])
 
-def unique_hash(file_path: str) -> str:
-    """ Small function to generate a hash to uniquely generate
-    a file. Inspired by MD5 version here:
-    http://stackoverflow.com/a/1131255/712997
+    right_one = AudioSegment.from_mp3('right_one.mp3')
+    channels_sample = extract_channels(audio.random_sampling)
 
-    Works with large files.
-
-    :param file_path: path to file.
-    :param block_size: read block size.
-    :return: a hash in an hexagesimal string form.
-    """
-    s = sha1()
-    with open(file_path, "rb") as f:
-        while True:
-            buf = f.read()
-            if not buf:
-                break
-            s.update(buf)
-    return s.hexdigest().upper()
-
-arr = plt.specgram(
-        channels[0],
-        NFFT=371,
-        noverlap=16
-)
-
-print(arr)
+    channels_sample_fingerprint_hashes = []
+    for channel in channels_sample:
+        channels_sample_fingerprint_hashes.append(fingerprint(channel))
 
 
-plt.specgram(
-        channels[1],
-        NFFT=371,
-        noverlap=16
-)
+    for channel in channels_sample_fingerprint_hashes:
+        for hash in channel:
+            for channel_2 in channels_fingerprint_hashes:
+                for hash_2 in channel_2:
+                    # print(hash[0], hash_2[0])
+
+                    if hash[0] == hash_2[0]:
+                        print("I found it!")
 
 
-print(arr2D)
-
-print(unique_hash(audio_path))
-
-for channel in channels:
-    print(len(channel))

@@ -20,6 +20,7 @@ PEAK_NEIGHBORHOOD_SIZE = 20
 DEFAULT_AMP_MIN = 10
 MIN_HASH_TIME_DELTA = 0
 MAX_HASH_TIME_DELTA = 200
+FINGERPRINT_REDUCTION = 20
 
 
 def print_plot(data, title):
@@ -65,6 +66,7 @@ def get_2D_peaks(arr2D, amp_min):
     # Returns true to the picks
     local_max = maximum_filter(arr2D, footprint=neighborhood) == arr2D
 
+    # todo: Testar se podemos desconsiderar este filtro
     # WHAT IS EROSION:
     # Erosion is a mathematical morphology operation that uses a structuring element for shrinking the shapes in an
     # image. The binary erosion of an image by a structuring element is the locus of the points where a
@@ -114,6 +116,6 @@ def generate_hashes(peaks, fan_value):
                 h = hashlib.sha1(
                     f"{str(freq_current_peak)}|{str(freq_neighbor_peak)}|{str(t_delta)}".encode('utf-8'))
 
-                hashes.append((h.hexdigest(), absolute_time))
+                hashes.append((h.hexdigest()[0:FINGERPRINT_REDUCTION], absolute_time))
 
     return hashes

@@ -1,4 +1,5 @@
 from pydub import AudioSegment
+from random import choice
 
 from recognizer.settings import (DEFAULT_SAMPLING_OFFSET,
                                  DEFAULT_SAMPLING_WIDTH)
@@ -7,8 +8,8 @@ from recognizer.settings import (DEFAULT_SAMPLING_OFFSET,
 class AudioSegmentPlusPlus(AudioSegment):
     @property
     def samplings(self):
-        sampling_width: int = DEFAULT_SAMPLING_WIDTH
-        offset: int = DEFAULT_SAMPLING_OFFSET
+        sampling_width: int = 4096
+        offset: int = 4096 * 0.5
         audio_samplings = []
 
         i: int = 0
@@ -23,4 +24,11 @@ class AudioSegmentPlusPlus(AudioSegment):
             print(i)
             track.export(dir + base_name + f'{i}', format=format)
 
-        return
+    def export_audio_random_track(self):
+        track = self.random_sampling
+        track.export(f'random_track.mp3', format='mp3')
+
+    @property
+    def random_sampling(self):
+        return choice(self.samplings)
+
