@@ -3,12 +3,23 @@ class Database():
         self._value = {}
 
     def insert(self, audio_name, hashes):
-        if not audio_name in self._value.keys():
-            self._value[audio_name] = []
+        for H in hashes:
+            h_code = H[0]
+            h_delta = H[1]
+            # insert into db
+            if not h_code in self._value.keys():
+                self._value[h_code] = {}
 
-        self._value[audio_name] += hashes
+            self._value[h_code][h_delta] = audio_name
 
-        return self._value
+    def find(self, h_code):
+        if not h_code in self._value.keys():
+            return None
+        
+        return self._value[h_code]
+
+    def debug(self):
+        print(self._value)
 
     @property
     def value(self):
