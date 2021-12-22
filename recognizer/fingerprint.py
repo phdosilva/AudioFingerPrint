@@ -13,7 +13,7 @@ np.set_printoptions(threshold=sys.maxsize)
 DEFAULT_FS = 44100 # Number from search
 WINDOW_SIZE = 4096
 OVERLAP_SIZE = WINDOW_SIZE * 0.5
-FAN_VALUE = 15
+FAN_VALUE = 100
 
 # Unknowing defaults
 PEAK_NEIGHBORHOOD_SIZE = 20
