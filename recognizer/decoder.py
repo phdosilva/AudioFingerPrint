@@ -25,13 +25,6 @@ def extract_hashes(audio_path):
 
     channels_fingerprint_hashes = []
     for channel in channels:
-        channels_fingerprint_hashes.append(fingerprint(channel))
+        channels_fingerprint_hashes += fingerprint(channel)
 
-    channels_sample = extract_channels(audio.random_sampling)
-
-    hashes = []
-
-    for channel in channels_sample:
-        hashes += fingerprint(channel)
-
-    return hashes
+    return channels_fingerprint_hashes
